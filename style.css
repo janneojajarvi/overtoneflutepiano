@@ -1,0 +1,92 @@
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#piano-app-container {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    border: 2px solid #333;
+    box-sizing: border-box;
+}
+
+h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#wp-piano-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 12px;
+}
+
+/* Painikkeiden perustyyli */
+.piano-btn {
+    aspect-ratio: 1 / 1.4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.1s;
+    padding: 10px;
+    user-select: none;
+}
+
+/* Infon tyylit */
+.info-section {
+    color: #bbb;
+    font-size: 13px;
+    margin-top: 25px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.info-section h4 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.swatch {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.swatch-open { background: #fff; box-shadow: 0 0 3px #fff; }
+.swatch-closed { background: #333; border: 1px solid #666; }
+.swatch-half { background: linear-gradient(135deg, #724b27, #ae7744); }
