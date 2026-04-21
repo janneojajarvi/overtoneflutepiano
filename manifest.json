@@ -1,7 +1,9 @@
 {
   "name": "Overtoneflute piano",
   "short_name": "Overoneplayer",
-  "start_url": "index.html",
+  "id": "/overtoneflutepiano/",
+  "start_url": "/overtoneflutepiano/index.html",
+  "scope": "/overtoneflutepiano/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2196F3",
