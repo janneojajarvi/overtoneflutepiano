@@ -1,4 +1,4 @@
-{
+ {
   "name": "Overtoneflute piano",
   "short_name": "Overoneplayer",
   "start_url": "index.html",
@@ -7,7 +7,7 @@
   "theme_color": "#2196F3",
   "icons": [
     {
-      "src": "kuva.png",
+      "src": "pitkisplayer.png",
       "sizes": "192x192",
       "type": "image/png"
     }
