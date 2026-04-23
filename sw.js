@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pitkispiano';
+const CACHE_NAME = 'pitkispiano-v2';
 const ASSETS = [
   './',
   './index.html',
