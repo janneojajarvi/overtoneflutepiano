@@ -1,1 +1,8 @@
-
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.janneojajarvi.overtoneflutepiano",
+        "sha256_cert_fingerprints": ["92:87:AE:19:B8:D0:94:E7:54:DC:3D:28:AB:0F:66:3B:4D:5D:6D:7A:8D:25:52:5B:A3:53:05:D1:7F:DF:C2:B2"]
+      }
+    }]
