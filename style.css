@@ -10,11 +10,13 @@ body {
 
 #piano-app-container {
     background: #1a1a1a;
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
     text-align: center;
     max-width: 600px;
-    width: 90%;
+    width: 95%;
+    max-height: 90vh; /* Estää sovellusta menemästä näytön yli */
+    display: flex;
     border: 2px solid #333;
     box-sizing: border-box;
 }
@@ -27,8 +29,22 @@ h3 {
 
 #wp-piano-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr); /* Pakotetaan 3 saraketta kännykällä */
+    gap: 10px;
+    overflow-y: auto; /* Lisää pystysuuntaisen rullauksen */
+    padding: 5px;
+    margin-bottom: 10px;
+    /* Tehdään rullauksesta sulava mobiilissa */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Tyylitellään rullauspalkki (Scrollbar) */
+#wp-piano-grid::-webkit-scrollbar {
+    width: 6px;
+}
+#wp-piano-grid::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
 }
 
 /* Painikkeiden perustyyli */
@@ -51,7 +67,7 @@ h3 {
 /* Infon tyylit */
 .info-section {
     color: #bbb;
-    font-size: 13px;
+    font-size: 11px;
     margin-top: 25px;
     text-align: left;
     max-width: 500px;
@@ -59,7 +75,8 @@ h3 {
     margin-right: auto;
     line-height: 1.6;
     border-top: 1px solid #333;
-    padding-top: 15px;
+    padding-top: 10px;
+    flex-shrink: 0; /* Estää infon puristumisen kasaan */
 }
 
 .info-section h4 {
