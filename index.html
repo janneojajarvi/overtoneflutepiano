@@ -1,39 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-select=no">
     <title>D-Pitkähuilu Piano</title>
-    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="piano-app-container">
         <header class="app-header">
-        <h3>D-Overtone Flute: All Keys / D-Pitkähuilu: Kaikki otteet</h3>
+            <h3>D-Overtone Flute: All Keys / D-Pitkähuilu: Kaikki otteet</h3>
         </header>
-        <div id="wp-piano-grid">
-            </div>
+
+        <!-- Tämä on rullaava alue -->
+        <div id="wp-piano-grid"></div>
 
         <footer class="info-section">
-        <div class="info-section">
             <h4>Information / Merkkiselitys</h4>
             <div class="info-list">
                 <div class="info-item">
                     <span class="swatch swatch-open"></span>
-                    <span><strong>Open / Avoin:</strong> Even harmonics / Parilliset (2, 4, 6...)</span>
+                    <span>Open / Avoin: Even harmonics</span>
                 </div>
                 <div class="info-item">
                     <span class="swatch swatch-closed"></span>
-                    <span><strong>Closed / Suljettu:</strong> Odd harmonics / Parittomat (3, 5, 7...)</span>
+                    <span>Closed / Suljettu: Odd harmonics</span>
                 </div>
                 <div class="info-item">
                     <span class="swatch swatch-half"></span>
-                    <span><strong>Half-closed / Puolisulku:</strong> Chromatic / Kromaattiset (Ab4, C#5, F5)</span>
+                    <span>Half-closed / Puolisulku</span>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
-</footer>
+
     <script src="script.js"></script>
 </body>
+</html>
