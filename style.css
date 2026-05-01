@@ -1,109 +1,104 @@
 body {
     background-color: #121212;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
+    height: 100vh;
     font-family: sans-serif;
+    overflow: hidden; /* Estää koko sivun rullauksen */
 }
 
 #piano-app-container {
     background: #1a1a1a;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 600px;
     width: 95%;
-    max-height: 90vh; /* Estää sovellusta menemästä näytön yli */
+    max-width: 450px;
+    height: 90vh; /* Kiinteä korkeus mobiilissa */
     display: flex;
+    flex-direction: column; /* Järjestys: header -> grid -> footer */
+    padding: 15px;
+    border-radius: 15px;
     border: 2px solid #333;
     box-sizing: border-box;
 }
 
-h3 {
+.app-header {
+    flex-shrink: 0; /* Ei kutistu */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.app-header h3 {
     color: white;
-    margin-bottom: 20px;
-    font-size: 22px;
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 #wp-piano-grid {
+    flex-grow: 1; /* Ottaa kaiken vapaan tilan */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Pakotetaan 3 saraketta kännykällä */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    overflow-y: auto; /* Lisää pystysuuntaisen rullauksen */
-    padding: 5px;
-    margin-bottom: 10px;
-    /* Tehdään rullauksesta sulava mobiilissa */
+    overflow-y: auto; /* Lisää rullauksen näppäimistöön */
+    padding-right: 5px; /* Tilaa rullauspalkille */
     -webkit-overflow-scrolling: touch;
 }
 
-/* Tyylitellään rullauspalkki (Scrollbar) */
-#wp-piano-grid::-webkit-scrollbar {
-    width: 6px;
-}
-#wp-piano-grid::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
-}
-
-/* Painikkeiden perustyyli */
+/* Näppäinten tyylit */
 .piano-btn {
-    aspect-ratio: 1 / 1.4;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    aspect-ratio: 1 / 1.2;
+    border-radius: 8px;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 18px;
-    transition: transform 0.1s;
-    padding: 10px;
-    user-select: none;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
 }
 
-/* Infon tyylit */
 .info-section {
-    color: #bbb;
-    font-size: 11px;
-    margin-top: 25px;
-    text-align: left;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    flex-shrink: 0; /* Pysyy aina pohjalla */
     border-top: 1px solid #333;
+    margin-top: 10px;
     padding-top: 10px;
-    flex-shrink: 0; /* Estää infon puristumisen kasaan */
+    color: #bbb;
+    font-size: 12px;
 }
 
 .info-section h4 {
     color: white;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 8px 0;
 }
 
 .info-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
     display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
 }
 
-.swatch-open { background: #fff; box-shadow: 0 0 3px #fff; }
+.swatch-open { background: #fff; }
 .swatch-closed { background: #333; border: 1px solid #666; }
 .swatch-half { background: linear-gradient(135deg, #724b27, #ae7744); }
+
+/* Rullauspalkin tyylittely */
+#wp-piano-grid::-webkit-scrollbar {
+    width: 5px;
+}
+#wp-piano-grid::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+}
