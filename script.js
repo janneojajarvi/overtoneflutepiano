@@ -91,3 +91,8 @@
         grid.appendChild(btn);
     });
 })();
+
+// Estetään grid-alueen rullauksen jumiutuminen
+document.getElementById('wp-piano-grid').addEventListener('touchstart', function(e) {
+    // Ei tehdä e.preventDefault(), jotta rullaus säilyy mahdollisena
+}, { passive: true });
