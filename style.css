@@ -40,17 +40,19 @@ body {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 8px;
     overflow-y: auto; /* Aktivoi rullauksen */
     -webkit-overflow-scrolling: touch; /* Sulava rullaus iOS-laitteille */
     overscroll-behavior: contain; /* Estää taustasivun rullauksen gridin päättyessä */
     padding-right: 5px;
+    padding: 5px; /* Pienennetty sisäreunusta */
     padding-bottom: 20px; /* Lisätilaa alimman rivin alle */
+    scroll-snap-type: y mandatory; /* Auttaa litteitä nappeja pysymään riveissä */
 }
 
 /* Näppäinten tyylit */
 .piano-btn {
-    aspect-ratio: 1 / 1.2;
+    aspect-ratio: 1 / 0.8;
     border-radius: 8px;
     font-weight: bold;
     display: flex;
@@ -59,6 +61,20 @@ body {
     justify-content: center;
     border: none;
     cursor: pointer;
+    font-size: 16px; /* Pidetään teksti selkeänä */
+    padding: 4px;
+    scroll-snap-align: start;
+}
+
+/* Säädetään numeron ja nuotin nimen kokoa, jotta ne mahtuvat litteään nappiin */
+.piano-btn span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.piano-btn small {
+    font-size: 0.7rem;
+    margin-top: 2px;
 }
 
 .info-section {
