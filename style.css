@@ -100,9 +100,20 @@ body {
 
 /* Rullauspalkin tyylittely */
 #wp-piano-grid::-webkit-scrollbar {
-    width: 5px;
+    width: 12px;
 }
+
+#wp-piano-grid::-webkit-scrollbar-track {
+    background: #252525; /* Lisätään taustauran väri, jotta palkki erottuu paremmin */
+    border-radius: 10px;
+}
+
 #wp-piano-grid::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 5px;
+    background: #555; /* Hieman vaaleampi harmaa */
+    border-radius: 10px;
+    border: 2px solid #252525; /* Lisää tyhjää tilaa palkin ympärille */
+}
+
+#wp-piano-grid::-webkit-scrollbar-thumb:active {
+    background: #888; /* Vaalenee, kun palkkiin kosketaan */
 }
