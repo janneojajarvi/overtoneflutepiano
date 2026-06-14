@@ -1,0 +1,135 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh; /* Käytetään dvh-yksikköä mobiilipalkkien huomioimiseen */
+    font-family: sans-serif;
+    overflow: hidden; /* Estää koko taustan rullauksen */
+    touch-action: none; /* Estää selaimen oletus-eleet taustalla */
+}
+
+#piano-app-container {
+    background: #1a1a1a;
+    width: 95%;
+    max-width: 450px;
+    height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    touch-action: pan-y; /* Sallii pystysuuntaisen rullauksen sovelluksen sisällä */
+}
+
+.app-header {
+    flex-shrink: 0; /* Ei kutistu */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.app-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#wp-piano-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    overflow-y: auto; /* Aktivoi rullauksen */
+    -webkit-overflow-scrolling: touch; /* Sulava rullaus iOS-laitteille */
+    overscroll-behavior: contain; /* Estää taustasivun rullauksen gridin päättyessä */
+    padding-right: 5px;
+    padding: 5px; /* Pienennetty sisäreunusta */
+    padding-bottom: 20px; /* Lisätilaa alimman rivin alle */
+    scroll-snap-type: y mandatory; /* Auttaa litteitä nappeja pysymään riveissä */
+}
+
+/* Näppäinten tyylit */
+.piano-btn {
+    aspect-ratio: 1 / 0.8;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Pidetään teksti selkeänä */
+    padding: 4px;
+    scroll-snap-align: start;
+}
+
+/* Säädetään numeron ja nuotin nimen kokoa, jotta ne mahtuvat litteään nappiin */
+.piano-btn span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.piano-btn small {
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+.info-section {
+    flex-shrink: 0; /* Pysyy aina pohjalla */
+    border-top: 1px solid #333;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #bbb;
+    font-size: 12px;
+}
+
+.info-section h4 {
+    color: white;
+    margin: 0 0 8px 0;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.swatch-open { background: #fff; }
+.swatch-closed { background: #333; border: 1px solid #666; }
+.swatch-half { background: linear-gradient(135deg, #724b27, #ae7744); }
+
+/* Rullauspalkin tyylittely */
+#wp-piano-grid::-webkit-scrollbar {
+    width: 12px;
+}
+
+#wp-piano-grid::-webkit-scrollbar-track {
+    background: #252525; /* Lisätään taustauran väri, jotta palkki erottuu paremmin */
+    border-radius: 10px;
+}
+
+#wp-piano-grid::-webkit-scrollbar-thumb {
+    background: #555; /* Hieman vaaleampi harmaa */
+    border-radius: 10px;
+    border: 2px solid #252525; /* Lisää tyhjää tilaa palkin ympärille */
+}
+
+#wp-piano-grid::-webkit-scrollbar-thumb:active {
+    background: #888; /* Vaalenee, kun palkkiin kosketaan */
+}
